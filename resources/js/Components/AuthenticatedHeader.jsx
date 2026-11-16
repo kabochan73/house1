@@ -16,7 +16,7 @@ export default function AuthenticatedHeader() {
                 <nav className="flex items-center gap-4 text-xl font-bold">
                     <Link
                         href={route('profile.edit')}
-                        className="text-gray-600 hover:text-gray-900"
+                        className="rounded-md bg-accent-500 px-4 py-2 text-white hover:bg-accent-600"
                     >
                         {user.name}
                     </Link>
@@ -24,7 +24,7 @@ export default function AuthenticatedHeader() {
                         href={route('logout')}
                         method="post"
                         as="button"
-                        className="rounded-md bg-accent-500 px-4 py-2 text-white hover:bg-accent-600"
+                        className="text-red-800 hover:text-red-900"
                     >
                         Log Out
                     </Link>
