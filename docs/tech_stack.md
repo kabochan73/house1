@@ -29,8 +29,9 @@
 | フロント | React | 19.x | Inertia v3のReactアダプタ対応版 |
 | ビルド | Vite | 最新版（7〜8系） | Breeze標準。Tailwind v4がVite 8対応済み |
 | CSS | Tailwind CSS | v4.3系 | v4がデフォルト、Oxideエンジン採用 |
-| 3D | @react-three/fiber | 最新版（9系想定） | drei 10系と組み合わせ |
-| 3D | @react-three/drei | 10.7.x系 | TransformControls等 |
+| 3D | @react-three/fiber | 8.18.x | React 18系と互換性のある最新版（9系はReact19必須のため不採用） |
+| 3D | @react-three/drei | 9.122.x | TransformControls, Clone, OrbitControls等 |
+| 3D | three | 0.180.x | |
 | 状態管理 | Zustand | 5.0.x系 | 軽量、API変更少ない |
 
 npm/Composerパッケージは変化が速いため、実際のセットアップ時に `composer create-project laravel/laravel` や `npm view <パッケージ名> version` で正確な最新版を確認して固定すること。
