@@ -13,10 +13,10 @@
 本番用（Railwayデプロイ用）とローカル用を共通のDockerfileで管理する。
 
 1. **フロントビルドステージ**：`node:22-alpine` で `npm ci && npm run build`（Viteの本番ビルド、`public/build`を生成）
-2. **PHPステージ**：`php:8.5-apache` ベース
+2. **PHPステージ**：`php:8.5-cli` ベース（Apache/FPMは使わず`php artisan serve`で配信、シンプルさ重視）
+   - `pdo_pgsql`拡張を追加
    - Composerをインストールし、`composer install --no-dev --optimize-autoloader`
    - ステージ1でビルドした`public/build`をコピー
-   - ドキュメントルートを`/public`に設定（Apache mod_rewrite有効化）
 
 ## Railwayへのデプロイ
 
