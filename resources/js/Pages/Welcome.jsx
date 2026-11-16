@@ -1,4 +1,4 @@
-import ApplicationLogo from '@/Components/ApplicationLogo';
+import Header from '@/Components/Header';
 import { Head, Link } from '@inertiajs/react';
 
 const steps = [
@@ -22,39 +22,35 @@ export default function Welcome({ auth, canLogin, canRegister }) {
             <Head title="Welcome" />
 
             <div className="min-h-screen bg-white">
-                <header className="mx-auto flex max-w-5xl items-center justify-between px-6 py-8">
-                    <ApplicationLogo className="text-2xl" />
-
-                    <nav className="flex items-center gap-4 text-sm">
-                        {auth.user ? (
-                            <Link
-                                href={route('dashboard')}
-                                className="rounded-md bg-accent-500 px-4 py-2 font-medium text-white hover:bg-accent-600"
-                            >
-                                Dashboard
-                            </Link>
-                        ) : (
-                            <>
-                                {canLogin && (
-                                    <Link
-                                        href={route('login')}
-                                        className="font-medium text-gray-600 hover:text-gray-900"
-                                    >
-                                        Log in
-                                    </Link>
-                                )}
-                                {canRegister && (
-                                    <Link
-                                        href={route('register')}
-                                        className="rounded-md bg-accent-500 px-4 py-2 font-medium text-white hover:bg-accent-600"
-                                    >
-                                        Sign up
-                                    </Link>
-                                )}
-                            </>
-                        )}
-                    </nav>
-                </header>
+                <Header>
+                    {auth.user ? (
+                        <Link
+                            href={route('dashboard')}
+                            className="rounded-md bg-accent-500 px-4 py-2 font-medium text-white hover:bg-accent-600"
+                        >
+                            Dashboard
+                        </Link>
+                    ) : (
+                        <>
+                            {canLogin && (
+                                <Link
+                                    href={route('login')}
+                                    className="font-medium text-gray-600 hover:text-gray-900"
+                                >
+                                    Log in
+                                </Link>
+                            )}
+                            {canRegister && (
+                                <Link
+                                    href={route('register')}
+                                    className="rounded-md bg-accent-500 px-4 py-2 font-medium text-white hover:bg-accent-600"
+                                >
+                                    Sign up
+                                </Link>
+                            )}
+                        </>
+                    )}
+                </Header>
 
                 <main className="mx-auto max-w-5xl px-6 py-20 text-center">
                     <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl">
@@ -98,7 +94,7 @@ export default function Welcome({ auth, canLogin, canRegister }) {
                 </main>
 
                 <footer className="py-10 text-center text-sm text-gray-400">
-                    RoomCraft
+                    Room Craft
                 </footer>
             </div>
         </>
