@@ -14,7 +14,6 @@ class WelcomeController extends Controller
     public function index(): Response
     {
         return Inertia::render('Welcome', [
-            'canLogin' => Route::has('login'),
             'canRegister' => Route::has('register'),
         ]);
     }

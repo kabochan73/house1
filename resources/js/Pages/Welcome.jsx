@@ -1,101 +1,72 @@
-import Header from '@/Components/Header';
+import PublicHeader from '@/Components/PublicHeader';
 import { Head, Link } from '@inertiajs/react';
 
 const steps = [
     {
         title: 'Pick a room',
-        description: 'Choose from a few room templates to start with.',
+        description: 'いくつかの部屋テンプレートから選びます。',
     },
     {
         title: 'Place furniture',
-        description: 'Drag sofas, chairs, tables and more into the space.',
+        description: 'ソファや椅子、テーブルなどを自由に配置できます。',
     },
     {
-        title: 'Save & share',
-        description: 'Keep your layout on your dashboard, or share it with a link.',
+        title: 'Save & Share',
+        description:
+            '気に入ったレイアウトはダッシュボードに保存、リンクで共有もできます。',
     },
 ];
 
-export default function Welcome({ auth, canLogin, canRegister }) {
+export default function Welcome({ auth, canRegister }) {
     return (
         <>
             <Head title="Welcome" />
 
             <div className="min-h-screen bg-white">
-                <Header>
-                    {auth.user ? (
-                        <Link
-                            href={route('dashboard')}
-                            className="rounded-md bg-accent-500 px-4 py-2 font-medium text-white hover:bg-accent-600"
-                        >
-                            Dashboard
-                        </Link>
-                    ) : (
-                        <>
-                            {canLogin && (
-                                <Link
-                                    href={route('login')}
-                                    className="font-medium text-gray-600 hover:text-gray-900"
-                                >
-                                    Log in
-                                </Link>
-                            )}
-                            {canRegister && (
-                                <Link
-                                    href={route('register')}
-                                    className="rounded-md bg-accent-500 px-4 py-2 font-medium text-white hover:bg-accent-600"
-                                >
-                                    Sign up
-                                </Link>
-                            )}
-                        </>
-                    )}
-                </Header>
+                <PublicHeader />
 
                 <main className="mx-auto max-w-5xl px-6 py-20 text-center">
-                    <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl">
-                        Redecorate any room,
-                        <br />
-                        right in your browser
+                    <h1 className="text-4xl font-bold tracking-tight text-gray-800 sm:text-5xl">
+                        ブラウザの中で模様替えアプリ
                     </h1>
                     <p className="mx-auto mt-6 max-w-xl text-lg text-gray-600">
-                        Pick a room, drop in some furniture, and see how it
-                        feels. Save your favorite layouts and share them with
-                        anyone.
+                        部屋を選んで、家具を置いて、雰囲気を確かめよう。
+                        <br />
+                        気に入ったレイアウトは保存して、共有できます。
                     </p>
 
-                    {canRegister && !auth.user && (
-                        <Link
-                            href={route('register')}
-                            className="mt-8 inline-block rounded-md bg-accent-500 px-6 py-3 font-medium text-white hover:bg-accent-600"
-                        >
-                            Get started
-                        </Link>
-                    )}
 
-                    <div className="mt-24 grid gap-8 text-left sm:grid-cols-3">
+                    <div className="mt-12 grid gap-8 text-left sm:grid-cols-3">
                         {steps.map((step, index) => (
                             <div
-                                key={step.title}
-                                className="rounded-xl border border-gray-200 p-6"
-                            >
-                                <div className="flex size-8 items-center justify-center rounded-full bg-accent-100 text-sm font-semibold text-accent-700">
-                                    {index + 1}
+                            key={step.title}
+                                className="rounded-xl border border-gray-400 p-6"
+                                >
+                                <div className="flex items-center gap-3">
+                                    <div className="flex size-8 shrink-0 items-center justify-center rounded-full bg-accent-100 text-sm font-semibold text-accent-700">
+                                        {index + 1}
+                                    </div>
+                                    <h2 className="font-bold text-gray-900 text-lg">
+                                        {step.title}
+                                    </h2>
                                 </div>
-                                <h2 className="mt-4 font-semibold text-gray-900">
-                                    {step.title}
-                                </h2>
                                 <p className="mt-2 text-sm text-gray-600">
                                     {step.description}
                                 </p>
                             </div>
                         ))}
                     </div>
+
+                        {canRegister && !auth.user && (
+                            <Link
+                                href={route('register')}
+                                className="mt-12 inline-block rounded-md text-2xl font-bold bg-accent-500 px-6 py-3  text-white hover:bg-accent-600"
+                            >
+                                Start Now
+                            </Link>
+                        )}
                 </main>
 
-                <footer className="py-10 text-center text-sm text-gray-400">
-                    Room Craft
-                </footer>
             </div>
         </>
     );
