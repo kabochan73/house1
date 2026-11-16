@@ -20,5 +20,7 @@ class DatabaseSeeder extends Seeder
         User::factory()->create([
             'name' => 'Test User',
         ]);
+
+        $this->call(FurnitureCatalogSeeder::class);
     }
 }
