@@ -24,7 +24,11 @@ export default function Register() {
         <GuestLayout>
             <Head title="Register" />
 
-            <form onSubmit={submit}>
+            <h1 className="text-2xl font-bold tracking-tight text-gray-900">
+                Create your account
+            </h1>
+
+            <form onSubmit={submit} className="mt-8 space-y-4">
                 <div>
                     <InputLabel htmlFor="name" value="Name" />
 
@@ -42,7 +46,7 @@ export default function Register() {
                     <InputError message={errors.name} className="mt-2" />
                 </div>
 
-                <div className="mt-4">
+                <div>
                     <InputLabel htmlFor="password" value="Password" />
 
                     <TextInput
@@ -59,7 +63,7 @@ export default function Register() {
                     <InputError message={errors.password} className="mt-2" />
                 </div>
 
-                <div className="mt-4">
+                <div>
                     <InputLabel
                         htmlFor="password_confirmation"
                         value="Confirm Password"
@@ -84,19 +88,20 @@ export default function Register() {
                     />
                 </div>
 
-                <div className="mt-4 flex items-center justify-end">
-                    <Link
-                        href={route('login')}
-                        className="rounded-md text-sm text-gray-600 underline hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
-                    >
-                        Already registered?
-                    </Link>
-
-                    <PrimaryButton className="ms-4" disabled={processing}>
-                        Register
-                    </PrimaryButton>
-                </div>
+                <PrimaryButton className="w-full" disabled={processing}>
+                    Register
+                </PrimaryButton>
             </form>
+
+            <p className="mt-6 text-center text-sm text-gray-600">
+                Already registered?{' '}
+                <Link
+                    href={route('login')}
+                    className="font-medium text-accent-600 hover:text-accent-700"
+                >
+                    Log in
+                </Link>
+            </p>
         </GuestLayout>
     );
 }
