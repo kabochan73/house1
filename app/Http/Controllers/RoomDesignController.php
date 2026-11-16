@@ -90,7 +90,7 @@ class RoomDesignController extends Controller
         $roomDesign->items()->delete();
         $roomDesign->items()->createMany($validated['items']);
 
-        return redirect()->route('room-designs.edit', $roomDesign);
+        return redirect()->route('dashboard');
     }
 
     /**

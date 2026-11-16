@@ -76,7 +76,7 @@ class RoomDesignTest extends TestCase
             ],
         ]);
 
-        $response->assertRedirect(route('room-designs.edit', $roomDesign));
+        $response->assertRedirect(route('dashboard'));
         $this->assertSame('My Living Room', $roomDesign->refresh()->name);
         $this->assertCount(1, $roomDesign->items);
         $this->assertSame($furniture->id, $roomDesign->items->first()->furniture_catalog_id);

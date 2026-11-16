@@ -1,18 +1,18 @@
 export const ROOM_TEMPLATES = {
     living: {
         label: 'Living',
-        floorColor: '#e7d9c4',
-        wallColor: '#f5efe4',
+        floorColor: '#e8c48f',
+        wallColor: 'linen',
     },
     bedroom: {
         label: 'Bedroom',
-        floorColor: '#d8e2ea',
-        wallColor: '#eef3f7',
+        floorColor: 'silver',
+        wallColor: 'snow',
     },
     office: {
         label: 'Office',
         floorColor: '#dcdcdc',
-        wallColor: '#f2f2f2',
+        wallColor: 'lavender',
     },
 };
 
