@@ -7,14 +7,14 @@ export default function RoomModel({ roomTemplate }) {
 
     return (
         <group>
-            <mesh rotation={[-Math.PI / 2, 0, 0]} receiveShadow>
+            <mesh rotation={[-Math.PI / 2, 0, 0]}>
                 <planeGeometry args={[ROOM_SIZE, ROOM_SIZE]} />
-                <meshStandardMaterial color={floorColor} />
+                <meshBasicMaterial color={floorColor} />
             </mesh>
 
             <mesh position={[0, WALL_HEIGHT / 2, -half]}>
                 <boxGeometry args={[ROOM_SIZE, WALL_HEIGHT, 0.1]} />
-                <meshStandardMaterial color={wallColor} />
+                <meshBasicMaterial color={wallColor} />
             </mesh>
 
             <mesh
@@ -22,7 +22,7 @@ export default function RoomModel({ roomTemplate }) {
                 rotation={[0, Math.PI / 2, 0]}
             >
                 <boxGeometry args={[ROOM_SIZE, WALL_HEIGHT, 0.1]} />
-                <meshStandardMaterial color={wallColor} />
+                <meshBasicMaterial color={wallColor} />
             </mesh>
         </group>
     );
