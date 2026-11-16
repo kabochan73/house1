@@ -48,21 +48,19 @@ export default function Edit({ roomDesign, furnitureCatalog }) {
     };
 
     return (
-        <AuthenticatedLayout
-            header={
-                <input
-                    value={name}
-                    onChange={(event) => setName(event.target.value)}
-                    className="rounded-md border-gray-300 text-xl font-semibold leading-tight text-gray-800 focus:border-accent-500 focus:ring-accent-500"
-                />
-            }
-        >
+        <AuthenticatedLayout>
             <Head title={roomDesign.name} />
 
-            <div className="mx-auto flex max-w-7xl gap-6 px-4 py-8 sm:px-6 lg:px-8">
-                <aside className="flex w-64 shrink-0 flex-col justify-between rounded-lg bg-white p-4 shadow">
+            <div className="flex">
+                <aside className="flex w-64 shrink-0 flex-col justify-between border-r-2 border-gray-400 bg-white p-4">
                     <div>
-                        <h3 className="mb-2 font-semibold text-gray-800">
+                        <input
+                            value={name}
+                            onChange={(event) => setName(event.target.value)}
+                            className="mb-4 w-full rounded-md border-gray-300 text-xl font-semibold text-gray-800 focus:border-accent-500 focus:ring-accent-500"
+                        />
+
+                        <h3 className="mb-2 text-lg font-semibold text-gray-800">
                             Furniture
                         </h3>
                         <FurnitureCatalogPanel
@@ -70,8 +68,8 @@ export default function Edit({ roomDesign, furnitureCatalog }) {
                         />
 
                         {selectedId !== null && (
-                            <div className="mt-6 border-t pt-4">
-                                <p className="mb-2 text-xs font-semibold uppercase tracking-wide text-gray-500">
+                            <div className="mt-6 border-t-2 border-gray-400 pt-4">
+                                <p className="mb-2 text-sm font-semibold uppercase tracking-wide text-gray-500">
                                     Selected item
                                 </p>
                                 <div className="flex gap-2">
@@ -106,7 +104,7 @@ export default function Edit({ roomDesign, furnitureCatalog }) {
                         )}
                     </div>
 
-                    <div className="flex flex-col gap-2 border-t pt-4">
+                    <div className="flex flex-col gap-2 border-t-2 border-gray-400 pt-4">
                         <PrimaryButton disabled={saving} onClick={save}>
                             {saving ? 'Saving...' : 'Save'}
                         </PrimaryButton>
@@ -114,7 +112,7 @@ export default function Edit({ roomDesign, furnitureCatalog }) {
                     </div>
                 </aside>
 
-                <div className="h-[600px] flex-1 overflow-hidden rounded-lg bg-white shadow">
+                <div className="h-[640px] flex-1 overflow-hidden bg-white">
                     <RoomCanvas
                         ref={glRef}
                         roomTemplate={roomDesign.room_template}

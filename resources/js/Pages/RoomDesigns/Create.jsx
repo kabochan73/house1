@@ -8,17 +8,14 @@ export default function Create({ roomTemplates }) {
     };
 
     return (
-        <AuthenticatedLayout
-            header={
-                <h2 className="text-xl font-semibold leading-tight text-gray-800">
-                    Choose a room
-                </h2>
-            }
-        >
+        <AuthenticatedLayout>
             <Head title="Choose a room" />
 
-            <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
-                <p className="mb-6 text-sm text-gray-600">
+            <div className="mx-auto max-w-5xl px-6 py-12">
+                <h1 className="text-3xl font-semibold text-gray-800">
+                    Choose a room
+                </h1>
+                <p className="mb-6 mt-1 text-sm text-gray-600">
                     Pick a room to start placing furniture in.
                 </p>
 
