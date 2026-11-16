@@ -2,7 +2,7 @@ import AuthenticatedHeader from '@/Components/AuthenticatedHeader';
 
 export default function AuthenticatedLayout({ header, children }) {
     return (
-        <div className="min-h-screen bg-gray-100">
+        <div className="min-h-screen">
             <AuthenticatedHeader />
 
             {header && (
