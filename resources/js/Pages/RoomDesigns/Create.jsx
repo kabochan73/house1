@@ -1,4 +1,4 @@
-import PrimaryButton from '@/Components/PrimaryButton';
+import RoomTemplateCard from '@/Components/RoomPicker/RoomTemplateCard';
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout';
 import { Head, router } from '@inertiajs/react';
 
@@ -17,15 +17,18 @@ export default function Create({ roomTemplates }) {
         >
             <Head title="Choose a room" />
 
-            <div className="py-12">
-                <div className="mx-auto flex max-w-7xl gap-4 sm:px-6 lg:px-8">
+            <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
+                <p className="mb-6 text-sm text-gray-600">
+                    Pick a room to start placing furniture in.
+                </p>
+
+                <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
                     {roomTemplates.map((roomTemplate) => (
-                        <PrimaryButton
+                        <RoomTemplateCard
                             key={roomTemplate}
-                            onClick={() => selectTemplate(roomTemplate)}
-                        >
-                            {roomTemplate}
-                        </PrimaryButton>
+                            roomTemplate={roomTemplate}
+                            onSelect={selectTemplate}
+                        />
                     ))}
                 </div>
             </div>
