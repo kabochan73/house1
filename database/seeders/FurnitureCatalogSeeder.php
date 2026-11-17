@@ -18,7 +18,7 @@ class FurnitureCatalogSeeder extends Seeder
             'sofa' => ['names' => ['Sofa A', 'Sofa B', 'Sofa C'], 'scale' => 1.5],
             'chair' => ['names' => ['Chair A', 'Chair B', 'Chair C'], 'scale' => 1.8],
             'table' => ['names' => ['Table A', 'Table B', 'Table C'], 'scale' => 1.3],
-            'bed' => ['names' => ['Bed A', 'Bed B', 'Bed C'], 'scale' => 1.0],
+            'bed' => ['names' => ['Bed A', 'Bed B', 'Bed C'], 'scale' => 1.5],
             'desk' => ['names' => ['Desk A', 'Desk B', 'Desk C'], 'scale' => 1.5],
         ];
 
