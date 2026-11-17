@@ -20,6 +20,9 @@ class FurnitureCatalogSeeder extends Seeder
             'table' => ['names' => ['Table A', 'Table B', 'Table C'], 'scale' => 1.3],
             'bed' => ['names' => ['Bed A', 'Bed B', 'Bed C'], 'scale' => 1.5],
             'desk' => ['names' => ['Desk A', 'Desk B', 'Desk C'], 'scale' => 1.5],
+            'bookcase' => ['names' => ['Bookcase A', 'Bookcase B', 'Bookcase C'], 'scale' => 2.0],
+            'plant' => ['names' => ['Plant A', 'Plant B', 'Plant C'], 'scale' => 2.6],
+            'rug' => ['names' => ['Rug A', 'Rug B', 'Rug C'], 'scale' => 2.4],
         ];
 
         foreach ($catalog as $category => $definition) {
