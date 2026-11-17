@@ -21,9 +21,10 @@ function StaticFurniture({ modelPath, scale, position, rotationY }) {
 export default function DemoRoomCanvas() {
     return (
         <Canvas
-            camera={{ position: [4, 3.2, 5], fov: 45 }}
+            camera={{ position: [5.2, 4.2, 6.5], fov: 45 }}
             dpr={[1, 1.5]}
         >
+            <color attach="background" args={['white']} />
             <ambientLight intensity={0.9} />
             <directionalLight position={[5, 8, 5]} intensity={0.5} />
 
@@ -35,8 +36,8 @@ export default function DemoRoomCanvas() {
 
             <OrbitControls
                 enablePan={false}
-                minDistance={4}
-                maxDistance={9}
+                minDistance={12}
+                maxDistance={16}
                 maxPolarAngle={Math.PI / 2.1}
             />
         </Canvas>

@@ -74,11 +74,11 @@ export default function Welcome({ auth, canRegister }) {
             <div className="min-h-screen bg-white">
                 <PublicHeader />
 
-                <main className="mx-auto max-w-6xl px-6 py-20">
-                    <div className="grid items-center gap-12 lg:grid-cols-2">
-                        <div className="text-center lg:text-left">
+                <main className="mx-auto max-w-7xl px-6">
+                    <div className="grid items-start gap-12 lg:grid-cols-2">
+                        <div className="py-20 text-center lg:text-left">
                             <h1 className="text-4xl font-bold tracking-tight text-gray-800 sm:text-5xl">
-                                ブラウザの中で模様替えアプリ
+                                ブラウザの中で模様替え
                             </h1>
                             <p className="mx-auto mt-6 max-w-xl text-lg text-gray-600 lg:mx-0">
                                 部屋を選んで、家具を置いて、雰囲気を確かめよう。
@@ -132,7 +132,7 @@ export default function Welcome({ auth, canRegister }) {
                             )}
                         </div>
 
-                        <div className="h-[420px] overflow-hidden rounded-2xl bg-gray-50">
+                        <div className="h-[600px] overflow-hidden bg-white">
                             <DemoRoomCanvas />
                         </div>
                     </div>
