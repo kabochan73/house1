@@ -1,27 +1,45 @@
 export const ROOM_TEMPLATES = {
-    living_4: {
-        label: 'Living 4×4m',
+    room_4x4: {
+        label: 'Room 4×4m',
         floorColor: '#e8c48f',
         wallColor: '#faf0e6',
-        size: 4,
+        width: 4,
+        depth: 4,
     },
-    living_5: {
-        label: 'Living 5×5m',
+    room_5x5: {
+        label: 'Room 5×5m',
         floorColor: '#e8c48f',
         wallColor: '#faf0e6',
-        size: 5,
+        width: 5,
+        depth: 5,
     },
-    living_6: {
-        label: 'Living 6×6m',
+    room_6x6: {
+        label: 'Room 6×6m',
         floorColor: '#e8c48f',
         wallColor: '#faf0e6',
-        size: 6,
+        width: 6,
+        depth: 6,
     },
-    office: {
-        label: 'Office',
-        floorColor: '#dcdcdc',
-        wallColor: '#e6e6fa',
-        size: 6,
+    room_4x6: {
+        label: 'Room 4×6m',
+        floorColor: '#e8c48f',
+        wallColor: '#faf0e6',
+        width: 4,
+        depth: 6,
+    },
+    room_5x7: {
+        label: 'Room 5×7m',
+        floorColor: '#e8c48f',
+        wallColor: '#faf0e6',
+        width: 5,
+        depth: 7,
+    },
+    room_6x8: {
+        label: 'Room 6×8m',
+        floorColor: '#e8c48f',
+        wallColor: '#faf0e6',
+        width: 6,
+        depth: 8,
     },
 };
 

@@ -28,7 +28,7 @@ export default function DemoRoomCanvas() {
             <ambientLight intensity={0.9} />
             <directionalLight position={[5, 8, 5]} intensity={0.5} />
 
-            <RoomModel roomTemplate="living_5" />
+            <RoomModel roomTemplate="room_5x5" />
 
             {DEMO_ITEMS.map((item) => (
                 <StaticFurniture key={item.modelPath} {...item} />

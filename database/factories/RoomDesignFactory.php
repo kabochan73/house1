@@ -20,7 +20,7 @@ class RoomDesignFactory extends Factory
     {
         return [
             'user_id' => User::factory(),
-            'room_template' => fake()->randomElement(['living_4', 'living_5', 'living_6', 'office']),
+            'room_template' => fake()->randomElement(['room_4x4', 'room_5x5', 'room_6x6', 'room_4x6', 'room_5x7', 'room_6x8']),
             'name' => fake()->words(3, true),
             'thumbnail' => null,
         ];

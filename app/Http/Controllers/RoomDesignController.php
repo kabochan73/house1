@@ -19,7 +19,7 @@ class RoomDesignController extends Controller
      *
      * @var list<string>
      */
-    public const ROOM_TEMPLATES = ['living_4', 'living_5', 'living_6', 'office'];
+    public const ROOM_TEMPLATES = ['room_4x4', 'room_5x5', 'room_6x6', 'room_4x6', 'room_5x7', 'room_6x8'];
 
     /**
      * Display labels for each room template, used to build a default name.
@@ -27,10 +27,12 @@ class RoomDesignController extends Controller
      * @var array<string, string>
      */
     private const ROOM_TEMPLATE_LABELS = [
-        'living_4' => 'Living 4×4',
-        'living_5' => 'Living 5×5',
-        'living_6' => 'Living 6×6',
-        'office' => 'Office',
+        'room_4x4' => 'Room 4×4',
+        'room_5x5' => 'Room 5×5',
+        'room_6x6' => 'Room 6×6',
+        'room_4x6' => 'Room 4×6',
+        'room_5x7' => 'Room 5×7',
+        'room_6x8' => 'Room 6×8',
     ];
 
     /**
