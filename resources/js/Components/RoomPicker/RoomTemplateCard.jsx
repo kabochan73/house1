@@ -7,7 +7,7 @@ export default function RoomTemplateCard({ roomTemplate, onSelect }) {
         <button
             type="button"
             onClick={() => onSelect(roomTemplate)}
-            className="group overflow-hidden rounded-xl border border-gray-200 bg-white text-left transition hover:border-accent-300 hover:shadow-md"
+            className="group overflow-hidden rounded-xl border-2 border-gray-400 bg-white text-left transition hover:border-accent-300 hover:shadow-md"
         >
             <div className="flex aspect-video flex-col">
                 <div
