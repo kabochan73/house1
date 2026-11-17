@@ -9,13 +9,13 @@ export default function Dashboard({ roomDesigns }) {
 
             <div className="mx-auto max-w-5xl px-6 py-12">
                 <div className="mb-6 flex items-center justify-between">
-                    <h1 className="text-3xl font-semibold text-gray-800">
-                        Room List
+                    <h1 className="text-4xl font-bold text-gray-800">
+                       My Room List
                     </h1>
 
                     <Link
                         href={route('room-designs.create')}
-                        className="rounded-md bg-accent-400 px-4 py-2 text-2xl font-bold text-white hover:bg-accent-600"
+                        className="rounded-full bg-accent-500 px-6 py-2 text-2xl font-bold text-white hover:bg-accent-600"
                     >
                         New
                     </Link>
