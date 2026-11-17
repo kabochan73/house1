@@ -41,7 +41,12 @@ const RoomCanvas = forwardRef(function RoomCanvas(
                 />
             ))}
 
-            <OrbitControls ref={orbitControlsRef} makeDefault />
+            <OrbitControls
+                ref={orbitControlsRef}
+                makeDefault
+                minDistance={8}
+                maxDistance={12}
+            />
         </Canvas>
     );
 });

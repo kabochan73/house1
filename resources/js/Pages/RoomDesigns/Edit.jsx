@@ -14,7 +14,6 @@ export default function Edit({ roomDesign, furnitureCatalog }) {
     const captureThumbnail = useCaptureThumbnail(glRef);
 
     const name = useEditorStore((state) => state.name);
-    const setName = useEditorStore((state) => state.setName);
     const selectedId = useEditorStore((state) => state.selectedId);
     const removeItem = useEditorStore((state) => state.removeItem);
     const toPayload = useEditorStore((state) => state.toPayload);
@@ -52,23 +51,23 @@ export default function Edit({ roomDesign, furnitureCatalog }) {
             <Head title={roomDesign.name} />
 
             <div className="flex">
-                <aside className="flex w-64 shrink-0 flex-col justify-between border-r-2 border-gray-400 bg-white p-4">
-                    <div>
-                        <input
-                            value={name}
-                            onChange={(event) => setName(event.target.value)}
-                            className="mb-4 w-full rounded-md border-gray-300 text-xl font-semibold text-gray-800 focus:border-accent-500 focus:ring-accent-500"
-                        />
+                <aside className="flex w-64 shrink-0 flex-col justify-between border-r-2 border-gray-400 bg-white">
+                    <div className="space-y-6 p-4">
+                        <p className="border-b-2 border-gray-400 pb-4 text-2xl font-bold text-gray-800">
+                            {name}
+                        </p>
 
-                        <h3 className="mb-2 text-lg font-semibold text-gray-800">
-                            Furniture
-                        </h3>
-                        <FurnitureCatalogPanel
-                            furnitureCatalog={furnitureCatalog}
-                        />
+                        <div>
+                            <h3 className="mb-3 text-2xl font-bold text-gray-800">
+                                Furniture
+                            </h3>
+                            <FurnitureCatalogPanel
+                                furnitureCatalog={furnitureCatalog}
+                            />
+                        </div>
 
                         {selectedId !== null && (
-                            <div className="mt-6 border-t-2 border-gray-400 pt-4">
+                            <div className="border-t-2 border-gray-400 pt-4">
                                 <p className="mb-2 text-sm font-semibold uppercase tracking-wide text-gray-500">
                                     Selected item
                                 </p>
@@ -104,11 +103,20 @@ export default function Edit({ roomDesign, furnitureCatalog }) {
                         )}
                     </div>
 
-                    <div className="flex flex-col gap-2 border-t-2 border-gray-400 pt-4">
-                        <PrimaryButton disabled={saving} onClick={save}>
+                    <div className="flex flex-col gap-2 border-t-2 border-gray-400 p-4">
+                        <PrimaryButton
+                            disabled={saving}
+                            onClick={save}
+                            style={{ justifyContent: 'flex-start' }}
+                        >
                             {saving ? 'Saving...' : 'Save'}
                         </PrimaryButton>
-                        <DangerButton onClick={destroy}>Delete</DangerButton>
+                        <DangerButton
+                            onClick={destroy}
+                            style={{ justifyContent: 'flex-start' }}
+                        >
+                            Delete
+                        </DangerButton>
                     </div>
                 </aside>
 
