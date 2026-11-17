@@ -61,46 +61,59 @@ export default function Edit({ roomDesign, furnitureCatalog }) {
                             <h3 className="mb-3 text-2xl font-bold text-gray-800">
                                 Furniture
                             </h3>
-                            <FurnitureCatalogPanel
-                                furnitureCatalog={furnitureCatalog}
-                            />
+                            <div className="max-h-80 overflow-y-auto pr-1">
+                                <FurnitureCatalogPanel
+                                    furnitureCatalog={furnitureCatalog}
+                                />
+                            </div>
                         </div>
 
-                        {selectedId !== null && (
-                            <div className="border-t-2 border-gray-400 pt-4">
-                                <p className="mb-2 text-sm font-semibold uppercase tracking-wide text-gray-500">
-                                    Selected item
-                                </p>
-                                <div className="flex gap-2">
-                                    <SecondaryButton
-                                        onClick={() => setMode('translate')}
-                                        className={
-                                            mode === 'translate'
-                                                ? 'ring-2 ring-accent-400'
-                                                : ''
-                                        }
-                                    >
-                                        Move
-                                    </SecondaryButton>
-                                    <SecondaryButton
-                                        onClick={() => setMode('rotate')}
-                                        className={
-                                            mode === 'rotate'
-                                                ? 'ring-2 ring-accent-400'
-                                                : ''
-                                        }
-                                    >
-                                        Rotate
-                                    </SecondaryButton>
+                        <div className="border-t-2 border-gray-400 pt-4">
+                            <p className="mb-2 text-sm font-semibold uppercase tracking-wide text-gray-500">
+                                Selected item
+                            </p>
+
+                            {selectedId === null ? (
+                                <div className="animate-pulse space-y-2">
+                                    <div className="flex gap-2">
+                                        <div className="h-9 flex-1 rounded-md bg-gray-200" />
+                                        <div className="h-9 flex-1 rounded-md bg-gray-200" />
+                                    </div>
+                                    <div className="h-9 rounded-md bg-gray-200" />
                                 </div>
-                                <DangerButton
-                                    className="mt-2 w-full"
-                                    onClick={() => removeItem(selectedId)}
-                                >
-                                    Remove
-                                </DangerButton>
-                            </div>
-                        )}
+                            ) : (
+                                <>
+                                    <div className="flex gap-2">
+                                        <SecondaryButton
+                                            onClick={() => setMode('translate')}
+                                            className={
+                                                mode === 'translate'
+                                                    ? 'ring-2 ring-accent-400'
+                                                    : ''
+                                            }
+                                        >
+                                            Move
+                                        </SecondaryButton>
+                                        <SecondaryButton
+                                            onClick={() => setMode('rotate')}
+                                            className={
+                                                mode === 'rotate'
+                                                    ? 'ring-2 ring-accent-400'
+                                                    : ''
+                                            }
+                                        >
+                                            Rotate
+                                        </SecondaryButton>
+                                    </div>
+                                    <DangerButton
+                                        className="mt-2 w-full"
+                                        onClick={() => removeItem(selectedId)}
+                                    >
+                                        Remove
+                                    </DangerButton>
+                                </>
+                            )}
+                        </div>
                     </div>
 
                     <div className="flex flex-col gap-2 border-t-2 border-gray-400 p-4">
@@ -120,7 +133,7 @@ export default function Edit({ roomDesign, furnitureCatalog }) {
                     </div>
                 </aside>
 
-                <div className="h-[640px] flex-1 overflow-hidden bg-white">
+                <div className="flex-1 self-stretch overflow-hidden bg-white">
                     <RoomCanvas
                         ref={glRef}
                         roomTemplate={roomDesign.room_template}
