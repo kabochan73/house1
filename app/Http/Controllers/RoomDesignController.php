@@ -19,7 +19,19 @@ class RoomDesignController extends Controller
      *
      * @var list<string>
      */
-    public const ROOM_TEMPLATES = ['living', 'bedroom', 'office'];
+    public const ROOM_TEMPLATES = ['living_4', 'living_5', 'living_6', 'office'];
+
+    /**
+     * Display labels for each room template, used to build a default name.
+     *
+     * @var array<string, string>
+     */
+    private const ROOM_TEMPLATE_LABELS = [
+        'living_4' => 'Living 4×4',
+        'living_5' => 'Living 5×5',
+        'living_6' => 'Living 6×6',
+        'office' => 'Office',
+    ];
 
     /**
      * Show the room template picker.
@@ -42,7 +54,7 @@ class RoomDesignController extends Controller
 
         $roomDesign = $request->user()->roomDesigns()->create([
             'room_template' => $validated['room_template'],
-            'name' => ucfirst($validated['room_template']).' Room',
+            'name' => self::ROOM_TEMPLATE_LABELS[$validated['room_template']].' Room',
         ]);
 
         return redirect()->route('room-designs.edit', $roomDesign);

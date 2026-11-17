@@ -25,14 +25,14 @@ class RoomDesignTest extends TestCase
         $user = User::factory()->create();
 
         $response = $this->actingAs($user)->post(route('room-designs.store'), [
-            'room_template' => 'living',
+            'room_template' => 'living_6',
         ]);
 
         $roomDesign = RoomDesign::sole();
 
         $response->assertRedirect(route('room-designs.edit', $roomDesign));
         $this->assertSame($user->id, $roomDesign->user_id);
-        $this->assertSame('living', $roomDesign->room_template);
+        $this->assertSame('living_6', $roomDesign->room_template);
         $this->assertNotEmpty($roomDesign->share_token);
     }
 
